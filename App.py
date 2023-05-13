@@ -5,12 +5,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from pytube import YouTube
 from tkinter import messagebox
-
-def CreateWidgets():
-
-    # Create a label for the title of the app.
-    head_label = Label(root, text="YouTube Playlist Downloader", font=("Inter bold", 36))
-    head_label.pack(pady=10)
+from tkinter import PhotoImage
 
 
 class YouTubeDownloader:
@@ -18,16 +13,20 @@ class YouTubeDownloader:
         self.master = master
         master.title("YouTube Downloader")
 
+        # Create a label Header
+        header = ttk.Label( text="YouTube Video Downloader", foreground="White", background="#757575", font=("Inter bold", 36))
+        header.pack()
+
         # Create a label and entry widget for the video URL
-        url_label = ttk.Label(master, text="Enter Video URL:")
+        url_label = ttk.Label(master, text="Enter Video URL:", font=("Inter regular", 15))
         url_label.pack()
         self.url_entry = ttk.Entry(master, width=50)
         self.url_entry.pack()
 
         # Create a label and combobox for the video quality
-        quality_label = ttk.Label(master, text="Select Video Quality:")
+        quality_label = ttk.Label(master, text="Select Video Quality:", font=("Inter regular", 15))
         quality_label.pack()
-        self.quality_combobox = ttk.Combobox(master, values=["720p", "480p", "360p", "240p", "144p"])
+        self.quality_combobox = ttk.Combobox(master, values=["1080p","720p", "480p", "360p", "240p", "144p"])
         self.quality_combobox.current(0)
         self.quality_combobox.pack()
 
@@ -45,6 +44,10 @@ class YouTubeDownloader:
 
         # Initialize the save directory to the current directory
         self.save_dir = os.getcwd()
+
+        # Create a label Header
+        header = ttk.Label( text="Made by Viraj Ray 2023©", font=("Inter medium", 10))
+        header.pack()
 
     # Define a function to select the save directory
     def select_save_dir(self):
@@ -77,4 +80,11 @@ class YouTubeDownloader:
 # Create the main window
 root = tk.Tk()
 my_downloader = YouTubeDownloader(root)
+
+#Set the geometry of tkinter window
+root.geometry("1000x500")
+
+root.mainloop()
+
+# Start the mainloop.
 root.mainloop()
