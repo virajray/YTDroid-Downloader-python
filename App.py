@@ -7,7 +7,6 @@ from pytube import YouTube
 from tkinter import messagebox
 from tkinter import PhotoImage
 
-
 class YouTubeDownloader:
     def __init__(self, master):
         self.master = master
@@ -34,9 +33,16 @@ class YouTubeDownloader:
         save_dir_button = ttk.Button(master, text="Select Save Directory", command=self.select_save_dir)
         save_dir_button.pack()
 
+        style=ttk.Style()
+        style.theme_use("clam")
+
+        # ttk Button style for Button 1
+        style.configure('dowloadbtn.TButton', font=("Inter bold", 16),width=20,bordercolor="red")
+        style.map('dowloadbtn.TButton',background=[('active','gray'),('!disabled',"red")],foreground=[('active','white'),('!disabled',"white")])
+
         # Create a button to start the download
-        download_button = ttk.Button(master, text="Download", command=self.download_video,)
-        download_button.pack(ipady=10, ipadx=280,)
+        download_button = ttk.Button(master, text="Download", command=self.download_video,style='dowloadbtn.TButton')
+        download_button.pack(ipady=10, ipadx=230,)
 
         # Create a progress bar to show the download progress
         self.progress_bar = ttk.Progressbar(master, orient="horizontal", length=300, mode="determinate")
@@ -46,7 +52,7 @@ class YouTubeDownloader:
         self.save_dir = os.getcwd()
 
         # Create a label Header
-        header = ttk.Label( text="Made by Viraj Ray 2023©", font=("Inter medium", 10))
+        header = ttk.Label( text="Made by Viraj Ray 2023©", font=("Inter medium", 10), )
         header.pack()
 
     # Define a function to select the save directory
