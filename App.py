@@ -94,7 +94,7 @@ my_downloader = YouTubeDownloader(root)
 #Set the geometry of tkinter window
 root.geometry("690x450")
 
-root.mainloop()
+root.iconbitmap(r"C:\Users\Viraj Ray\Downloads\104447_apple_logo_icon.ico")
 
 # Start the mainloop.
 root.mainloop()
