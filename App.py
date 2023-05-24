@@ -10,10 +10,10 @@ from tkinter import PhotoImage
 class YouTubeDownloader:
     def __init__(self, master):
         self.master = master
-        master.title("YouTube Downloader")
+        master.title("YT Droid YouTube Downloader")
 
         # Create a label Header 
-        header = ttk.Label( text=" Ӝ YT DROID    ", foreground="white", background="grey", font=("Inter bold", 72))
+        header = ttk.Label( text=" Ӝ YT DROID    ", foreground="red", background="white", font=("Inter bold", 72))
         header.pack()
 
         # Create a label Header
@@ -42,7 +42,7 @@ class YouTubeDownloader:
 
         # ttk Button style for Button 1
         style.configure('dowloadbtn.TButton', font=("Inter bold", 16),width=20,bordercolor="red")
-        style.map('dowloadbtn.TButton',background=[('active','gray'),('!disabled',"red")],foreground=[('active','white'),('!disabled',"white")])
+        style.map('dowloadbtn.TButton',background=[('active','white'),('!disabled',"red")],foreground=[('active','red'),('!disabled',"white")])
 
         # Create a button to start the download
         download_button = ttk.Button(master, text="Download", command=self.download_video,style='dowloadbtn.TButton')
