@@ -99,3 +99,7 @@ root.iconbitmap(r"C:\Users\Viraj Ray\Downloads\104447_apple_logo_icon.ico")
 
 # Start the mainloop.
 root.mainloop()
+
+#The method select_save_dir uses filedialog.askdirectory, 
+# which is a blocking operation. It is recommended to run it in a separate 
+# thread or use an asynchronous approach to prevent the GUI from freezing.
