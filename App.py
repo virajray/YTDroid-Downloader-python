@@ -12,6 +12,9 @@ class YouTubeDownloader:
         self.master = master
         master.title("YT Droid YouTube Downloader")
 
+        style=ttk.Style()
+        style.theme_use("clam")
+
         # Create a label Header 
         header = ttk.Label( text=" Ӝ YT DROID    ", foreground="red", background="white", font=("Inter bold", 72))
         header.pack()
@@ -37,10 +40,7 @@ class YouTubeDownloader:
         save_dir_button = ttk.Button(master, text="Select Save Directory", command=self.select_save_dir)
         save_dir_button.pack()
 
-        style=ttk.Style()
-        style.theme_use("clam")
-
-        # ttk Button style for Button 1
+        # ttk Button style for dowload Button
         style.configure('dowloadbtn.TButton', font=("Inter bold", 16),width=20,bordercolor="red")
         style.map('dowloadbtn.TButton',background=[('active','white'),('!disabled',"red")],foreground=[('active','red'),('!disabled',"white")])
 
@@ -94,6 +94,7 @@ my_downloader = YouTubeDownloader(root)
 #Set the geometry of tkinter window
 root.geometry("690x450")
 
+#Set the icon of tkinter window
 root.iconbitmap(r"C:\Users\Viraj Ray\Downloads\104447_apple_logo_icon.ico")
 
 # Start the mainloop.
