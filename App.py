@@ -14,7 +14,7 @@ class YouTubeDownloader:
         master.title("YouTube Downloader")
 
         # Create a label Header
-        header = ttk.Label( text="YouTube Video Downloader", foreground="White", background="#757575", font=("Inter bold", 36))
+        header = ttk.Label( text="YouTube Video Downloader", foreground="White", background="red", font=("Inter bold", 36))
         header.pack()
 
         # Create a label and entry widget for the video URL
@@ -35,8 +35,8 @@ class YouTubeDownloader:
         save_dir_button.pack()
 
         # Create a button to start the download
-        download_button = ttk.Button(master, text="Download", command=self.download_video)
-        download_button.pack()
+        download_button = ttk.Button(master, text="Download", command=self.download_video,)
+        download_button.pack(ipady=10, ipadx=280,)
 
         # Create a progress bar to show the download progress
         self.progress_bar = ttk.Progressbar(master, orient="horizontal", length=300, mode="determinate")
