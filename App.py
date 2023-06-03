@@ -4,8 +4,6 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from pytube import YouTube
-from tkinter import messagebox
-from tkinter import PhotoImage
 
 class YouTubeDownloader:
     def __init__(self, master):
