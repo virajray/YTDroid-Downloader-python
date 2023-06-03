@@ -30,4 +30,5 @@
 
 <p>Happy downloading with YTDroid-Downloader!</p>
 
-![Capture](https://github.com/virajray/YTDroid-Downloader/assets/36956604/10977757-16c7-41ff-9298-3a5258aac054)
+![Capture](https://github.com/virajray/YTDroid-Downloader/assets/36956604/73948cdd-de5c-4b7e-90b9-505f088df6be)
+
