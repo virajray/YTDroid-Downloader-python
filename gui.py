@@ -13,13 +13,14 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame0")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-
+# Create the main window
 window = Tk()
 
+# Set the window size and background color
 window.geometry("800x600")
 window.configure(bg = "#161616")
 
-
+# Create a canvas widget for drawing
 canvas = Canvas(
     window,
     bg = "#161616",
@@ -30,7 +31,9 @@ canvas = Canvas(
     relief = "ridge"
 )
 
+# Place the canvas in the window
 canvas.place(x = 0, y = 0)
+# Add text to the canvas (title of the application)
 canvas.create_text(
     103.0,
     42.0,
@@ -40,6 +43,7 @@ canvas.create_text(
     font=("Inter Bold", 48 * -1)
 )
 
+# Add subtitle text to the canvas
 canvas.create_text(
     311.0,
     93.0,
@@ -76,6 +80,7 @@ canvas.create_text(
     font=("Inter Medium", 15 * -1)
 )
 
+# Create and place the first button with an image
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
@@ -92,6 +97,7 @@ button_1.place(
     height=50.0
 )
 
+# Create and place the second button with an image
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_2.png"))
 button_2 = Button(
@@ -108,6 +114,7 @@ button_2.place(
     height=50.0
 )
 
+# Create and place an entry widget (text box) background image
 entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
@@ -115,6 +122,8 @@ entry_bg_1 = canvas.create_image(
     274.5,
     image=entry_image_1
 )
+
+# Create and place an entry widget (text box) for URL input
 entry_1 = Entry(
     bd=0,
     bg="#FFFFFF",
@@ -128,6 +137,7 @@ entry_1.place(
     height=41.0
 )
 
+# Create and place an image on the canvas (for decoration)
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
@@ -151,5 +161,9 @@ button_3.place(
     width=206.0,
     height=38.0
 )
+
+# Disable window resizing
 window.resizable(False, False)
+
+# Start the Tkinter main loop
 window.mainloop()
