@@ -93,7 +93,7 @@ my_downloader = YouTubeDownloader(root)
 root.geometry("690x450")
 
 #Set the icon of tkinter window
-root.iconbitmap(r"C:\Users\User\Documents\GitHub\YTDroid-Downloader\Files\YT droid Logo V2.ico")
+root.iconbitmap(r"Files\YT droid Logo V2.ico")
 
 # Start the mainloop.
 root.mainloop()
