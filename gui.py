@@ -1,5 +1,11 @@
-
+import os
+import tkinter as tk
+from tkinter import *
 from pathlib import Path
+from tkinter import ttk
+from tkinter import filedialog
+from pytube import YouTube
+
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -136,20 +142,19 @@ image_1 = canvas.create_image(
     image=image_image_1
 )
 
-button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
-button_3 = Button(
-    image=button_image_3,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
-    relief="flat"
-)
-button_3.place(
+quality_combobox = ttk.Combobox(values=["1080p","720p", "480p", "360p", "240p", "144p"])
+quality_combobox.place(
     x=300.0,
     y=354.0,
     width=206.0,
     height=38.0
 )
 window.resizable(False, False)
+
+#Set the icon of tkinter window
+window.iconbitmap(r"assets\icon.ico")
+
+#Set the title of tkinter window
+window.title("YT Droid YouTube Downloader")
+
 window.mainloop()
